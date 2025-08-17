@@ -3,6 +3,18 @@
 import { useState } from 'react'
 import { Users, Clock, MapPin, Star, Calendar, BookOpen } from 'lucide-react'
 
+interface DanceClass {
+  name: string
+  instructor: string
+  time: string
+  duration: string
+  location: string
+  price: number
+  level: string
+  description: string
+  availableSpots: number
+}
+
 const classCategories = [
   {
     name: 'Kids & Youth',
@@ -114,17 +126,17 @@ const classCategories = [
 
 export default function ClassSignups() {
   const [selectedCategory, setSelectedCategory] = useState(classCategories[0])
-  const [selectedClass, setSelectedClass] = useState(null)
+  const [selectedClass, setSelectedClass] = useState<DanceClass | null>(null)
   const [showRegistration, setShowRegistration] = useState(false)
 
-  const handleClassSelection = (danceClass) => {
+  const handleClassSelection = (danceClass: DanceClass) => {
     setSelectedClass(danceClass)
     setShowRegistration(true)
   }
 
   const handleRegistration = () => {
     // This would integrate with Supabase
-    console.log('Registering for class:', selectedClass.name)
+    console.log('Registering for class:', selectedClass?.name)
     setShowRegistration(false)
     setSelectedClass(null)
   }

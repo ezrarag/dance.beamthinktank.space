@@ -14,7 +14,6 @@ export default function DonationWidget() {
   const [selectedAmount, setSelectedAmount] = useState(50)
   const [customAmount, setCustomAmount] = useState('')
   const [selectedTicket, setSelectedTicket] = useState('')
-  const [isDonating, setIsDonating] = useState(true)
 
   const handleDonation = () => {
     // This would integrate with Stripe
@@ -34,7 +33,7 @@ export default function DonationWidget() {
             Support the Arts & Get Tickets
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Your contribution helps us bring dance to communities and make the arts accessible to everyone.
+            Your contribution helps us bring dance education and performances to communities across the country.
           </p>
         </div>
 
